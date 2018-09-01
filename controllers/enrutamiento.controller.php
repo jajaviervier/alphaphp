@@ -8,6 +8,7 @@ class ControllerEnrutamiento {
 
 		if ($ruta == "home" ||
 			$ruta == "funcionarios" ||
+			$ruta == "armas" ||
 			$ruta == "salir") {
 
 			include "views/modulos/".$ruta.".php";
