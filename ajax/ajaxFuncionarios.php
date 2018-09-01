@@ -3,23 +3,30 @@
 require_once "../controllers/funcionarios.controller.php";
 require_once "../models/funcionarios.modelo.php";
 
-Class ajaxFuncionarios {
+Class ajaxfuncionarios {
 
 	public $id_funcionarios;
-	public $titulo_funcionarios;
-	public $descripcion_funcionarios;
-	public $vinculo_funcionarios;
+	public $nombreFuncionarios;
+	public $apellidoFuncionarios;
+	public $rutFuncionarios;
+	public $nacFuncionarios;
+	public $fonoFuncionarios;
+	public $armaFuncionario;
+	public $cascoFuncionario;
+	public $escudoFuncionario;
 	public $imagen_funcionarios;
-	public $rutaActual;
-
 	public function crearFuncionarios(){
-		$datos = array("titulo"=>$this->titulo_funcionarios,
-						"descripcion"=>$this->descripcion_funcionarios,
-						"vinculo"=>$this->vinculo_funcionarios,
-						"imagen"=>$this->imagen_funcionarios);
-
+		$datos = array(
+		"nombreFuncionarios"=>$this->nombreFuncionarios,
+		"apellidoFuncionarios"=>$this->apellidoFuncionarios,
+		"rutFuncionarios"=>$this->rutFuncionarios,
+		"nacFuncionarios"=>$this->nacFuncionarios,
+		"fonoFuncionarios"=>$this->fonoFuncionarios,
+		"armaFuncionario"=>$this->armaFuncionario,
+		"cascoFuncionario"=>$this->cascoFuncionario,
+		"escudoFuncionario"=>$this->escudoFuncionario,
+		"imagen"=> $this ->imagen_funcionarios);
 		$respuesta = ControllerFuncionarios::ctrCrearFuncionarios($datos);
-
 		echo $respuesta;
 	}
 	public function editarFuncionarios(){
@@ -27,14 +34,17 @@ Class ajaxFuncionarios {
 
 		$respuesta = ControllerFuncionarios::ctrEditarFuncionarios($id_funcionarios);
 
-		$datos = array("id_funcionarios"=>$respuesta["id"],
-						"titulo_funcionarios"=>$respuesta["titulo"],
-						"descripcion"=>$respuesta["descripcion"],
-						"vinculo"=>$respuesta["url"],
-						"imagen"=>substr($respuesta["rutaImg"], 3)
-						);
-
-		echo json_encode($datos);
+		$datos = array("id_funcionarios"=>$id_funcionarios,
+			"nombreFuncionarios"=>$this->nombreFuncionarios,
+			"apellidoFuncionarios"=>$this->apellidoFuncionarios,
+			"rutFuncionarios"=>$this->rutFuncionarios,
+			"nacFuncionarios"=>$this->nacFuncionarios,
+			"fonoFuncionarios"=>$this->fonoFuncionarios,
+			"armaFuncionario"=>$this->armaFuncionario,
+			"cascoFuncionario"=>$this->cascoFuncionario,
+			"escudoFuncionario"=>$this->escudoFuncionario,
+			"imagen"=> $this ->imagen_funcionarios);
+		echo $datos;
 
 	}
 	public function actualizarFuncionarios(){
@@ -65,10 +75,15 @@ Class ajaxFuncionarios {
 $tipoOperacion = $_POST["tipoOperacion"];
 
 if($tipoOperacion == "insertarFuncionarios") {
-	$crearNuevoFuncionarios = new ajaxFuncionarios();
-	$crearNuevoFuncionarios -> titulo_funcionarios = $_POST["tituloFuncionarios"];
-	$crearNuevoFuncionarios -> descripcion_funcionarios = $_POST["descripcionFuncionarios"];
-	$crearNuevoFuncionarios -> vinculo_funcionarios = $_POST["urlFuncionarios"];
+    $crearNuevoFuncionarios = new ajaxFuncionarios();
+	$crearNuevoFuncionarios -> nombreFuncionarios = $_POST["nombreFuncionarios"];
+	$crearNuevoFuncionarios -> apellidoFuncionarios =  $_POST["apellidoFuncionarios"];
+	$crearNuevoFuncionarios -> rutFuncionarios =  $_POST["rutFuncionarios"];
+	$crearNuevoFuncionarios -> nacFuncionarios = $_POST["nacFuncionarios"];
+	$crearNuevoFuncionarios -> fonoFuncionarios =  $_POST["fonoFuncionarios"];
+	$crearNuevoFuncionarios -> armaFuncionario =  $_POST["armaFuncionario"];
+	$crearNuevoFuncionarios -> cascoFuncionario = $_POST["cascoFuncionario"];
+	$crearNuevoFuncionarios -> escudoFuncionario = $_POST["escudoFuncionario"];
 	$crearNuevoFuncionarios -> imagen_funcionarios = $_FILES["imagenFuncionarios"];
 	$crearNuevoFuncionarios ->crearFuncionarios();
 }
@@ -80,12 +95,15 @@ if ($tipoOperacion == "editarFuncionarios") {
 }
 if ($tipoOperacion == "actualizarFuncionarios") {
 	$actualizarFuncionarios = new ajaxFuncionarios();
-	$actualizarFuncionarios -> id_funcionarios = $_POST["id_funcionarios"];
-	$actualizarFuncionarios -> titulo_funcionarios = $_POST["tituloFuncionarios"];
-	$actualizarFuncionarios -> descripcion_funcionarios = $_POST["descripcionFuncionarios"];
-	$actualizarFuncionarios -> vinculo_funcionarios = $_POST["urlFuncionarios"];
+	$actualizarFuncionarios -> nombreFuncionarios = $_POST["nombreFuncionarios"];
+	$actualizarFuncionarios -> apellidoFuncionarios =  $_POST["apellidoFuncionarios"];
+	$actualizarFuncionarios -> rutFuncionarios =  $_POST["rutFuncionarios"];
+	$actualizarFuncionarios -> nacFuncionarios = $_POST["nacFuncionarios"];
+	$actualizarFuncionarios -> fonoFuncionarios =  $_POST["fonoFuncionarios"];
+	$actualizarFuncionarios -> armaFuncionario =  $_POST["armaFuncionario"];
+	$actualizarFuncionarios -> cascoFuncionario = $_POST["cascoFuncionario"];
+	$actualizarFuncionarios -> escudoFuncionario = $_POST["escudoFuncionario"];
 	$actualizarFuncionarios -> imagen_funcionarios = $_FILES["imagenFuncionarios"];
-	$actualizarFuncionarios -> rutaActual = $_POST["rutaActual"];
 	$actualizarFuncionarios -> actualizarFuncionarios();
 }
 if ($tipoOperacion == "eliminarFuncionarios") {

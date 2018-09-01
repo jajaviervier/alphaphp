@@ -5,20 +5,29 @@ Class ControllerFuncionarios {
 	public function listarFuncionariosCtr() {
 		$tabla = "funcionarios";
 		$respuesta = ModeloFuncionarios::listarFuncionariosMdl($tabla);
+
 		return $respuesta;
 	}
 
 	static public function ctrCrearFuncionarios($datos) {
 		$tabla = "funcionarios";
+
 		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
+
 		$nuevoAncho = 1024;
 		$nuevoAlto = 768;
+
 		$directorio = "../views/dist/img/funcionarios";
+
 		if($datos["imagen"]["type"] == "image/jpeg"){
+
 			$rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
+
 			$origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
 			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
 			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
 			imagejpeg($destino, $rutaImagen);
 
 		}
@@ -52,7 +61,7 @@ Class ControllerFuncionarios {
 
 		$tabla = "funcionarios";
 
-		if ( unlink(substr($ruta, 3)) ) {
+		if ( unlink($ruta) ) {
 		
 			$respuesta = ModeloFuncionarios::mdlEliminarFuncionarios($tabla, $id_funcionarios);	
 		
