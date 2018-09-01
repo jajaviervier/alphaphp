@@ -49,15 +49,15 @@ Class ControllerCascos {
 
 	}
 
-	static public function ctrEliminarCascos($id_cascos, $ruta) {
+	static public function ctrEliminarCascos($id_cascos) {
 
 		$tabla = "cascos";
 
-		if ( unlink($ruta) ) {
+
 		
 			$respuesta = ModeloCascos::mdlEliminarCascos($tabla, $id_cascos);	
 		
-		}
+		
 		
 		return $respuesta;
 

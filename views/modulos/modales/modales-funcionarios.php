@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Insertar Nueva subCategoria</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Registrar nuevo funcionario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -119,13 +119,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar subCategorias</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar Funcionario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form id="formu-editar-subFuncionarios">
+        <form id="formu-nuevo-funcionarios">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombres</label>
             <div class="col-sm-10">
@@ -162,14 +162,14 @@
             <div class="col-sm-10 conteEditarImagen">
               <input type="file" class="form-control"  id="imagenEditar" name="imagenFuncionarios">
               <br>
-              <img src="" id="imagenFuncionarios" alt="" class="thumbnail" width="200">
+              <img src="" id="imagenFuncionarios" alt="" class="thumbnail " width="100%;  ">
 
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Arma de servicio</label>
             <div class="col-sm-10">
-              <select id="armaFuncionario" name="armaFuncionario">
+              <select id="armaFuncionario" name="armaFuncionario" class="form-control">
               <option value="1">
               Arma 1
               </option>
@@ -185,7 +185,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Casco</label>
             <div class="col-sm-10">
-              <select id="cascoFuncionario" name="cascoFuncionario">
+              <select id="cascoFuncionario" name="cascoFuncionario" class="form-control">
               <option value="1">
               Casco 1
               </option>
@@ -199,26 +199,11 @@
             </div>
           </div>
 
-    <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Casco</label>
-            <div class="col-sm-10">
-              <select id="cascoFuncionario" name="cascoFuncionario">
-              <option value="1">
-              Casco 1
-              </option>
-              <option value="2">
-              Casco 2
-              </option>
-              <option value="3">
-              Casco 3
-              </option>
-               </select>
-            </div>
-          </div>
+
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Escudo</label>
+            <label class="col-sm-2 col-form-label" >Escudo</label>
             <div class="col-sm-10">
-              <select id="cascoFuncionario" name="escudoFuncionario">
+              <select id="cascoFuncionario" class="form-control" name="escudoFuncionario">
               <option value="1">
               Escudo 1
               </option>
@@ -233,7 +218,7 @@
           </div>
    
        
-          <input type="hidden" name="tipoOperacion" value="actualizarCategorias">
+          <input type="hidden" name="tipoOperacion" value="insertarFuncionarios">
           <input type="hidden" name="rutaActual">
           <input type="hidden" name="id_Funcionarios">
       </div>
@@ -260,15 +245,20 @@
       <div class="modal-body">
  <div class="row">
  
- <div class="col-sm-4">
+
+
+<div class"col-sm-4 offset-sm-4">
+foto
+ </div>
  </div>
 
-<div class"col-sm-4">
- </div>
+
+ <div class="row">
+  
  </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         <button type="submit" class="btn btn-primary">Actualizar</button>
         
 

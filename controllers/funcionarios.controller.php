@@ -61,11 +61,10 @@ Class ControllerFuncionarios {
 
 		$tabla = "funcionarios";
 
-		if ( unlink($ruta) ) {
-		
+
 			$respuesta = ModeloFuncionarios::mdlEliminarFuncionarios($tabla, $id_funcionarios);	
 		
-		}
+	
 		
 		return $respuesta;
 

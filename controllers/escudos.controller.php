@@ -49,16 +49,10 @@ Class ControllerEscudos {
 
 	}
 
-	static public function ctrEliminarEscudos($id_escudos, $ruta) {
+	static public function ctrEliminarEscudos($id_escudos) {
 
 		$tabla = "escudos";
-
-		if ( unlink($ruta) ) {
-		
-			$respuesta = ModeloEscudos::mdlEliminarEscudos($tabla, $id_escudos);	
-		
-		}
-		
+		$respuesta = ModeloEscudos::mdlEliminarEscudos($tabla, $id_escudos);			
 		return $respuesta;
 
 	}

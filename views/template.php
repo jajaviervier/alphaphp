@@ -64,5 +64,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </script>
 
 <script src="views/dist/js/funcionarios.js"></script>
+<script src="views/dist/js/cascos.js"></script>
+<script src="views/dist/js/escudos.js"></script>
+<script src="views/dist/js/armas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.11/dist/sweetalert2.all.min.js"></script></body>
 </html>

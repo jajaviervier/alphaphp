@@ -50,17 +50,9 @@ Class ControllerArmas {
 	}
 
 	static public function ctrEliminarArmas($id_armas, $ruta) {
-
 		$tabla = "armas";
-
-		if ( unlink($ruta) ) {
-		
-			$respuesta = ModeloArmas::mdlEliminarArmas($tabla, $id_armas);	
-		
-		}
-		
+		$respuesta = ModeloArmas::mdlEliminarArmas($tabla, $id_armas);		
 		return $respuesta;
-
 	}
 
 	static public function ctrEditarArmas($id_armas) {
