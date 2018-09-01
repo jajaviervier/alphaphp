@@ -1,6 +1,6 @@
 <div class="login-box">
   <div class="login-logo">
-    <a href="">CPANEL</a>
+    <a href="">Alpha</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -16,16 +16,10 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
-        </div>
+    
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-success btn-block btn-flat center mx-auto">Ingresar</button>
         </div>
       </div>
       <?php 

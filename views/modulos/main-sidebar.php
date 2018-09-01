@@ -20,6 +20,11 @@
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="home"><i class="fa fa-link"></i><span>Resumen Diario <?php echo $_SESSION["avatar"]; ?></span></a></li>
         <li><a href="funcionarios"><i class="fas fa-users"></i> <span>Funcionarios</span></a></li>
+        <li><a href="armas"><i class="fas fa-users"></i> <span>Armas</span></a></li>
+        <li><a href="cascos"><i class="fas fa-users"></i> <span>Cascos</span></a></li>
+        <li><a href="escudos"><i class="fas fa-users"></i> <span>Escudos</span></a></li>
+
+
 
 
       </ul>

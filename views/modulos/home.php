@@ -43,10 +43,10 @@ $porcentaje=0;
   <div class="row">
     <div class="col-sm-6">
 <!-- Apply any bg-* class to to the info-box to color it -->
-        <div class="info-box bg-green">
+        <div class="info-box bg-grey">
         <span class="info-box-icon"><i class="fas fa-users"></i></span>
         <div class="info-box-content">
-        <span class="info-box-text">Funcionarios En Terreno <?php echo $porcentaje; ?></span>
+        <span class="info-box-text">Funcionarios En Terreno </span>
         <span class="info-box-number"><?php echo $funcionariosActivos; ?>/<?php echo $funcTotales; ?></span>
         <!-- The progress section is optional -->
         <div class="progress">
@@ -64,7 +64,7 @@ $porcentaje=0;
 <!-- Tarjeta Vehiculo -->
     <div class="col-sm-6">
 
-        <div class="info-box bg-blue">
+        <div class="info-box bg-grey">
         <span class="info-box-icon"><i class="fas fa-car"></i>
         </span>
         <div class="info-box-content">
@@ -84,16 +84,42 @@ $porcentaje=0;
 <!-- Tarjeta Vehiculo -->
 <!-- Tarjeta Armas -->
 <div class="col-sm-6">
+<?php
 
+$armas = ControllerArmas::listarArmasCtr();
+
+
+$armasActivos=0;
+$armasInactivos=0;
+$armasTotales=0;
+$porcentajeArmas=0;
+          foreach ($armas as $key => $value) {
+           
+            switch ($value["estadoArmas"]) {
+              case "terreno":
+              $armasActivos++;
+                  break;
+              case "libre":
+              $armasInactivos++;
+                  break;
+
+          }
+     
+          } 
+          $armasTotales=$armasActivos+$armasInactivos;
+          $porcentajeArmas=$armasActivos*100;
+          $porcentajeArmas=$porcentajeArmas/$armasTotales;
+
+?>
 <div class="info-box bg-grey">
 <span class="info-box-icon"><i class="fas fa-list-ul"></i>
 </span>
 <div class="info-box-content">
 <span class="info-box-text">Armas En Terreno</span>
-<span class="info-box-number">4/36</span>
+<span class="info-box-number"><?php echo $armasActivos; ?>/<?php echo $armasInactivos; ?></span>
 <!-- The progress section is optional -->
 <div class="progress">
-  <div class="progress-bar bg-green" style="width: 10%;"></div>
+  <div class="progress-bar bg-green"  style="width: <?php echo $porcentajeArmas; ?>%;" ></div>
 </div>
 <span class="progress-description">
  Actualizado hace 3 min...
@@ -107,7 +133,7 @@ $porcentaje=0;
 <!-- Tarjeta Quimico -->
 <div class="col-sm-6">
 
-<div class="info-box bg-red">
+<div class="info-box bg-grey">
 <span class="info-box-icon"><i class="fas fa-flask"></i>
 </span>
 <div class="info-box-content">

@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Gestor de Armas
+        Gestor de Cascos
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -13,8 +13,8 @@
     <!-- Main content -->
     <section class="content container-fluid">
 
-      <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-armas">Registrar <i class="fas fa-plus"></i></button>
-      <table class="table table-dark" id="tablaArmas">
+      <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-cascos">Registrar <i class="fas fa-plus"></i></button>
+      <table class="table table-dark" id="tablaCascos">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -29,32 +29,32 @@
 
           <?php 
           
-          $armas = ControllerArmas::listarArmasCtr();
+          $cascos = ControllerCascos::listarCascosCtr();
 
-          foreach ($armas as $key => $value) {
-            if($value["estadoArmas"]=="libre"){
+          foreach ($cascos as $key => $value) {
+            if($value["estadoCascos"]=="libre"){
               $estado="Bodega";
             }else{
               $estado="en Terreno";
             }
             echo '
               <tr>
-                <th scope="row">'.$value["serieArmas"].'</th>
-                <td>'.$value["modeloArmas"].'</td>
-                <td>'.$value["marcaArmas"].'</td>
+                <th scope="row">'.$value["serieCascos"].'</th>
+                <td>'.$value["modeloCascos"].'</td>
+                <td>'.$value["marcaCascos"].'</td>
                 <td>' .$estado.'</td>               
                 <td width="100">
-                  <button class="btn btn-sm btn-info " idArmas="'.$value["idArmas"].'" data-toggle="modal" data-target="#modal-editar-armas">
+                  <button class="btn btn-sm btn-info " idCascos="'.$value["idCascos"].'" data-toggle="modal" data-target="#modal-editar-cascos">
                     <i class="far fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-danger btnEliminarArmas" idArmas="'.$value["idArmas"].'" ">
+                  <button class="btn btn-sm btn-danger btnEliminarCascos" idCascos="'.$value["idCascos"].'" ">
                     <i class="far fa-trash-alt"></i>
                   </button>
                 </td>
               </tr>
             ';
           }
-          echo " <script> $('#tablaArmas').DataTable(); </script>";
+          echo " <script> $('#tablaCascos').DataTable(); </script>";
           ?>
         </tbody>
       </table>
