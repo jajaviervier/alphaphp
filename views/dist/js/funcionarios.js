@@ -1,8 +1,16 @@
+
+//Log
+//se creó un switch con el fin de validar todas las respuestas de error del servidor
+//que anteriormente no alertaban al usuario
+//Se implementa un mensaje de alerta para confirmar si la accion se desea llevar a cabo.
+
+
+// En Proceso 
+// Por el momento no se están actualizando los datos. Solución pendiente.
 $(document).ready(function(){
 	$("#formu-nuevo-funcionarios").submit(function (e) {
 		e.preventDefault()
 		var datos = new FormData($(this)[0])
-console.log(datos)
 		$.ajax({
 			url: 'ajax/ajaxFuncionarios.php',
 			type: 'POST',
@@ -10,13 +18,12 @@ console.log(datos)
 			processData: false,
 			contentType: false,
 			success: function(respuesta) {
-				console.log(respuesta)
 				switch(respuesta) {
 					case "1":
 					swal({
 						type: 'success',
 						title: 'Excelente',
-						text: 'Sub Categoria creada con éxito!'
+						text: 'Funcionario agregado con exito!'
 					  }).then((result) => {
 						if (result.value) {
 							window.location = "funcionarios"
@@ -62,13 +69,13 @@ console.log(datos)
 		datos.append("tipoOperacion", "eliminarFuncionarios");
 		datos.append("rutaImagen", rutaImagen);
 		swal({
-		  title: '¿Estás seguro de eliminars?',
+		  title: '¿Estás seguro de eliminar?',
 		  text: "Los cambios no son reversibles!",
 		  type: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: '#3085d6',
 		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Si, Eliminsa!'
+		  confirmButtonText: 'Si, Eliminar!'
 		}).then((result) => {
 		  if (result.value) {
 		  	$.ajax({
@@ -102,6 +109,8 @@ console.log(datos)
 		
 
 	})
+
+
 
 	$("body .table-dark").on("click", ".btnEditarFuncionarios", function(){
 		var idFuncionarios = $(this).attr("idFuncionarios");

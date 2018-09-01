@@ -58,7 +58,7 @@ console.log(datos)
 		datos.append("id_armas", idArmas);
 		datos.append("tipoOperacion", "eliminarArmas");
 		swal({
-		  title: '¿Estás seguro de eliminars?',
+		  title: '¿Estás seguro de eliminar?',
 		  text: "Los cambios no son reversibles!",
 		  type: 'warning',
 		  showCancelButton: true,

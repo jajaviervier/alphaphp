@@ -59,13 +59,13 @@ console.log(datos)
 		datos.append("id_cascos", idCascos);
 		datos.append("tipoOperacion", "eliminarCascos");
 		swal({
-		  title: '¿Estás seguro de eliminars?',
+		  title: '¿Estás seguro de eliminar?',
 		  text: "Los cambios no son reversibles!",
 		  type: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: '#3085d6',
 		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Si, Eliminsa!'
+		  confirmButtonText: 'Si, Eliminar!'
 		}).then((result) => {
 		  if (result.value) {
 		  	$.ajax({

@@ -17,9 +17,18 @@
       </div>
       <div class="row">
     
-        <!-- /.col -->
+        <!-- /.
+        Historial Modificaciones
+        Se modificó el mensaje del boton submit desde Sig in a Ingresar.
+        Se eliminó el checkbox "remember me".
+        
+        
+        
+        col -->
+
+      
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-success btn-block btn-flat center mx-auto">Ingresar</button>
+          <button type="submit"  class="btn btn-success btn-block btn-flat center mx-auto">Ingresar</button>
         </div>
       </div>
       <?php 

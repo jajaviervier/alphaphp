@@ -21,7 +21,7 @@
             <th scope="col">Nombre</th>    
             <th scope="col">Apellido</th>
             <th scope="col">Estado</th>
-            <th scope="col">Imagen </th>
+
             <th scope="col">Acciones</th>
           </tr>
         </thead>
@@ -44,9 +44,9 @@
                 <td>'.$value["cargoFuncionarios"].'</td>
                 <td>' .$estado.'</td>
               
-                <td width="300"> <img src="'.substr($value["imagenFuncionarios"],3 ).'" style="width:100px; "></td>
+              
                 <td width="100">
-                  <button class="btn btn-sm btn-info " onclick="cargarFichaUsuario()" idFuncionarios="'.$value["idfuncionarios"].'" data-toggle="modal" data-target="#modal-editar-funcionarios">
+                  <button class="btn btn-sm btn-info"  data-toggle="modal" data-target="#modal-editar-funcionarios">
                     <i class="far fa-edit"></i>
                   </button>
                   <button class="btn btn-sm btn-danger btnEliminarFuncionarios" idFuncionarios="'.$value["idfuncionarios"].'" rutaImagen="'.$value["imagenFuncionarios"].'">

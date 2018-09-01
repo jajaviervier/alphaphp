@@ -12,19 +12,26 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombres</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ingrese el nombre" required name="nombreFuncionarios">
+              <input type="text" class="form-control" placeholder="Ingrese el nombre" required name="nombreFuncionarios"  maxlength="40">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Apellidos</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ingrese el apellido" required name="apellidoFuncionarios">
+              <input type="text" class="form-control" placeholder="Ingrese el apellido" required name="apellidoFuncionarios"  maxlength="40">
             </div>
           </div>
+          <!-- 
+          Historial
+          Este campo es necesario validarlo debido a que tiene un formato establecido.
+
+
+
+          -->
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Rut</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ingrese el Rut" required name="rutFuncionarios">
+              <input type="text" class="form-control" placeholder="Ingrese el Rut" required name="rutFuncionarios"  maxlength="12">
             </div>
           </div>
 
@@ -53,15 +60,20 @@
             <label class="col-sm-2 col-form-label">Arma de servicio</label>
             <div class="col-sm-10">
               <select id="armaFuncionario" name="armaFuncionario" class="form-control">
-              <option value="1">
-              Arma 1
-              </option>
-              <option value="2">
-              Arma 2
-              </option>
-              <option value="3">
-              Arma 3
-              </option>
+              <?php 
+          
+          $escudos = ControllerArmas::listarArmasCtr();
+
+          foreach ($escudos as $key => $value) {
+     
+            echo '
+         
+                <option>'.$value["serieArmas"].'</option>
+     
+            ';
+          }
+
+          ?>
                </select>
             </div>
           </div>
@@ -69,15 +81,20 @@
             <label class="col-sm-2 col-form-label">Casco</label>
             <div class="col-sm-10">
               <select id="cascoFuncionario" name="cascoFuncionario" class="form-control">
-              <option value="1">
-              Casco 1
-              </option>
-              <option value="2">
-              Casco 2
-              </option>
-              <option value="3">
-              Casco 3
-              </option>
+              <?php 
+          
+          $escudos = ControllerCascos::listarCascosCtr();
+
+          foreach ($escudos as $key => $value) {
+     
+            echo '
+         
+                <option>'.$value["serieCascos"].'</option>
+     
+            ';
+          }
+
+          ?>
                </select>
             </div>
           </div>
@@ -87,15 +104,20 @@
             <label class="col-sm-2 col-form-label" >Escudo</label>
             <div class="col-sm-10">
               <select id="cascoFuncionario" class="form-control" name="escudoFuncionario">
-              <option value="1">
-              Escudo 1
-              </option>
-              <option value="2">
-              Escudo 2
-              </option>
-              <option value="3">
-              Escudo 3
-              </option>
+              <?php 
+          
+          $escudos = ControllerEscudos::listarEscudosCtr();
+
+          foreach ($escudos as $key => $value) {
+     
+            echo '
+         
+                <option>'.$value["serieEscudos"].'</option>
+     
+            ';
+          }
+
+          ?>
                </select>
             </div>
           </div>
@@ -107,7 +129,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
         </div>
         </form>
     </div>
@@ -115,11 +137,11 @@
 </div>
 
 <!-- EDITAR SLIDER -->
-<div class="modal fade" id="modal-editar-subFuncionarios"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-editar-funcionarios"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Funcionario</h5>
+        <h3 class="modal-title" id="exampleModalLabel">Editar Funcionario</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -129,19 +151,19 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombres</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ingrese el nombre" required name="nombreFuncionarios">
+              <input type="text" class="form-control" placeholder="Ingrese el nombre" required name="nombreFuncionarios" maxlength="30">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Apellidos</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ingrese el apellido" required name="apellidoFuncionarios">
+              <input type="text" class="form-control" placeholder="Ingrese el apellido" required name="apellidoFuncionarios" maxlength="30">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Rut</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ingrese el Rut" required name="rutFuncionarios">
+              <input type="text" class="form-control" placeholder="Ingrese el Rut" required name="rutFuncionarios" maxlength="12">
             </div>
           </div>
 
@@ -154,7 +176,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Fono</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" required name="fonoFuncionarios">
+              <input type="number" class="form-control" required name="fonoFuncionarios" maxlength="9">
             </div>
           </div>
           <div class="form-group row">

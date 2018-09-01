@@ -108,7 +108,12 @@ $porcentajeArmas=0;
           } 
           $armasTotales=$armasActivos+$armasInactivos;
           $porcentajeArmas=$armasActivos*100;
-          $porcentajeArmas=$porcentajeArmas/$armasTotales;
+          if($armasTotales<1){
+            $porcentajeArmas=0;
+          }else{
+            $porcentajeArmas=$porcentajeArmas/$armasTotales;
+          }
+         
 
 ?>
 <div class="info-box bg-grey">

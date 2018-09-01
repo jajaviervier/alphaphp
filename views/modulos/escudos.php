@@ -13,7 +13,7 @@
     <!-- Main content -->
     <section class="content container-fluid">
 
-      <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-escudos">Registrar <i class="fas fa-plus"></i></button>
+      <button class="btn btn-primary" data-toggle="modal" disabled data-target="#modal-insertar-escudos">Registrar <i class="fas fa-plus"></i></button>
       <table class="table table-dark" id="tablaEscudos">
         <thead>
           <tr>

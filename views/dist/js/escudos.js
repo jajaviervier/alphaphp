@@ -64,7 +64,7 @@ console.log(datos)
 		  showCancelButton: true,
 		  confirmButtonColor: '#3085d6',
 		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Si, Eliminsa!'
+		  confirmButtonText: 'Si, Eliminar!'
 		}).then((result) => {
 		  if (result.value) {
 		  	$.ajax({
@@ -78,7 +78,7 @@ console.log(datos)
 					if ( respuesta == "ok") {
 						swal(
 					      'Eliminado!',
-					      'Su archivo a sido eliminadso.',
+					      'Su archivo a sido eliminados.',
 					      'success'
 					    ).then((result) => {
 						  if (result.value) {
